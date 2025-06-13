@@ -5,6 +5,8 @@
     <p> {{note.text}}</p>
         
         <a href="{% url 'notes.update' pk=note.id %}" class="btn btn-primary mt-3">Edit Notes</a>
+        <a href="{% url 'notes.delete' pk=note.id %}" class="btn btn-primary mt-3">Delete Notes</a>
+
         <br>
         <a href="{% url 'notes.list' %}" class="btn btn-primary mt-3">Back to Notes</a>
 

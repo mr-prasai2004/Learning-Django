@@ -9,7 +9,7 @@ from django.views.generic.edit import DeleteView
 class NotesDeleteView(DeleteView):
     model=Notes
     success_url='/smart/notes'
-    
+    template_name= 'notes/notes_delete.html'
 
 
 class NotesUpdateView(UpdateView):
