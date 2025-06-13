@@ -9,6 +9,12 @@ class NotesListView(ListView):
     context_object_name="notes"
     template_name = "notes/notes_list.html"
 
+class PopularNotesListView(ListView):
+    model= Notes
+    context_object_name="notes"
+    template_name = "notes/notes_list.html"
+    queryset = Notes.objects.filter(pk__gte=1)
+
 # def list(request):
 #     all_notes= Notes.objects.all()
 #     return render(request,'notes/notes_list.html',{'notes':all_notes})
