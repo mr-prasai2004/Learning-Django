@@ -1,19 +1,25 @@
 from django.shortcuts import render
 from django.http import Http404
 from . models import Notes
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+# Create your views here.
 
 class NotesListView(ListView):
     model= Notes
-    context_context_name="notes"
+    context_object_name="notes"
     template_name = "notes/notes_list.html"
 
-# Create your views here.
+# def list(request):
+#     all_notes= Notes.objects.all()
+#     return render(request,'notes/notes_list.html',{'notes':all_notes})
 
 
-def detail(request, pk):
-    try:
-        note = Notes.objects.get(pk=pk)
-    except Notes.DoesNotExist:
-        raise Http404("Notes Doesn't Exist")
-    return render(request, 'notes/notes_detail.html', {'note':note})
+class NotesDetailView(DetailView):
+    model = Notes
+    context_object_name= 'note'
+# def detail(request, pk):
+#     try:
+#         note = Notes.objects.get(pk=pk)
+#     except Notes.DoesNotExist:
+#         raise Http404("Notes Doesn't Exist")
+#     return render(request, 'notes/notes_detail.html', {'note':note})
