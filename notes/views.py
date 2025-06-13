@@ -3,7 +3,15 @@ from django.http import Http404
 from . models import Notes
 from .forms import NotesForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic.edit import DeleteView
 # Create your views here.
+
+class NotesDeleteView(DeleteView):
+    model=Notes
+    success_url='/smart/notes'
+    
+
+
 class NotesUpdateView(UpdateView):
     model=Notes
     success_url='/smart/notes'
