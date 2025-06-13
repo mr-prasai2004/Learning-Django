@@ -131,3 +131,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 IS_CODESPACES = os.environ.get('CODESPACE') == 'true'
+
+LOGIN_REDIRECT_URL = '/smart/notes'
