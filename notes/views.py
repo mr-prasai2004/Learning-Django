@@ -4,8 +4,9 @@ from . models import Notes
 from django.views.generic import ListView
 
 class NotesListView(ListView):
-    model=Notes
-    context_context_name='notes'
+    model= Notes
+    context_context_name="notes"
+    template_name = "notes/notes_list.html"
 
 # Create your views here.
 
